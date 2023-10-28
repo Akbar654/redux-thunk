@@ -1,17 +1,11 @@
 const initialState: any = {
-    products: [
-        {
-            id: 1,
-            title: "Products List",
-            category: "Electronics"
-        }
-    ]
+    products: []
 }
 
-export const productReducer = (state = initialState, { type }: { type: string }) => {
+export const productReducer = (state = initialState, { type, payload }: { type: string, payload: [] }) => {
     switch(type) {
         case "SET_PRODUCTS":
-            return state;
+            return { products: [ ...payload ] };
         case "SELECTED_PRODUCT":
             return state;
         default:
